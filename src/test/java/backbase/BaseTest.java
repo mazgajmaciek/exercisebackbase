@@ -25,12 +25,12 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
 //        final Wait<WebDriver> webDriverWait = new WebDriverWait(driver, 5).withMessage("Element not found");
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @AfterClass
     public static void tearDown() {
-//        driver.manage().deleteAllCookies();
-//        driver.close();
+        driver.manage().deleteAllCookies();
+        driver.close();
     }
 }

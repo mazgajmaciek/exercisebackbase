@@ -19,4 +19,9 @@ public class HomePage extends Page {
         click(signBtn);
         return new LoginPage(driver);
     }
+
+    public ArticleEditorPage getArticleEditorPage() {
+        click(newPostBtn);
+        return new ArticleEditorPage(driver);
+    }
 }
