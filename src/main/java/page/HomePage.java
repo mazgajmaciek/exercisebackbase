@@ -15,6 +15,9 @@ public class HomePage extends Page {
     @FindBy(xpath = ".//a[contains(text(), 'Sign in')]")
     private WebElement signBtn;
 
+    @FindBy(xpath = ".//ul[@class='nav navbar-nav pull-xs-right']//a[contains(@href,'#/profile/')]")
+    private WebElement userPageBtn;
+
     public LoginPage getLoginPage() {
         click(signBtn);
         return new LoginPage(driver);
@@ -23,5 +26,14 @@ public class HomePage extends Page {
     public ArticleEditorPage getArticleEditorPage() {
         click(newPostBtn);
         return new ArticleEditorPage(driver);
+    }
+
+    public UserPage getUserPage() {
+        click(userPageBtn);
+        return new UserPage(driver);
+    }
+
+    public String getCurrentUsername() {
+        return userPageBtn.getText();
     }
 }
