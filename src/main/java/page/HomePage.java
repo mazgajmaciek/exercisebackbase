@@ -12,4 +12,11 @@ public class HomePage extends Page {
     @FindBy(xpath = ".//a[@routerlink='/editor']")
     private WebElement newPostBtn;
 
+    @FindBy(xpath = ".//a[contains(text(), 'Sign in')]")
+    private WebElement signBtn;
+
+    public LoginPage getLoginPage() {
+        click(signBtn);
+        return new LoginPage(driver);
+    }
 }

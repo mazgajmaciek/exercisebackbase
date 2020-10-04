@@ -16,7 +16,18 @@ public class LoginPage extends Page{
     @FindBy(xpath = ".//input[@placeholder='Password']")
     private WebElement passwordInput;
 
+    @FindBy(xpath = ".//button[contains(text(), 'Sign in')]")
+    private WebElement loginButton;
+
     private final String email = "mazgajmaciek@gmail.com";
     private final String password = "polska0";
+
+    public HomePage login() {
+        usernameInput.sendKeys(email);
+        passwordInput.sendKeys(password);
+        waitForJSandJQueryToLoad();
+        click(loginButton);
+        return new HomePage(driver);
+    }
 
 }
