@@ -25,7 +25,7 @@ public class NewArticleTest extends BaseTest {
 
         ArticlePage articlePage = new ArticlePage(driver);
 
-        assertThat(articlePage.getArticleText().getText()).isEqualTo(articleText);
+        assertThat(articlePage.getArticleText()).isEqualTo(articleText);
         assertThat(articlePage.getArticleTitle().getText()).isEqualTo(articleTitle);
     }
 }

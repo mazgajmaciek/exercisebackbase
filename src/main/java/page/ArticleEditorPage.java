@@ -32,5 +32,12 @@ public class ArticleEditorPage extends Page{
         return new ArticlePage(driver);
     }
 
+    public ArticlePage editArticleText(String newArticleText) {
+        articleTextInput.sendKeys(newArticleText);
+        click(publishArticleButton);
+        waitForJSandJQueryToLoad();
+        return new ArticlePage(driver);
+    }
+
 
 }

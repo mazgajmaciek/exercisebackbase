@@ -16,10 +16,11 @@ public class UserPage extends Page {
     @FindBy(xpath = ".//div[@class='article-preview']")
     List<WebElement> articlesList;
 
-    public void clickAvailableArticle() {
+    public ArticlePage clickAvailableArticle() {
         if (!articlesList.isEmpty()) {
             articlesList.get(0).click();
         }
+        return new ArticlePage(driver);
     }
 
 }
